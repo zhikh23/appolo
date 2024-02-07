@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15.3-alpine3.18
+    command: postgres -c 'max_connections=10'
+    ports:
+      - "32260:5432"
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    healthcheck:
+      test: pg_isready --username "postgres" --dbname "testdb"
+      interval: 1s
+      retries: 5
+      timeout: 5s
+
+  migrate:
+    image: migrate/migrate:v4.16.2
+    command: > 
+      -source 'file://./migrations/'
+      -database 'postgres://postgres:5432/testdb?user=postgres&password=postgres&sslmode=disable' up
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./migrations:/migrations:ro

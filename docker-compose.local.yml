@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  postgesql:
+    image: postgres:12-alpine
+    container_name: appolo-psql
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=appolo
+      - POSTGRES_DB=appolodb
+    volumes:
+      - /var/lib/postgres/appolo/data:/var/lib/postgresql/data
+    networks:
+      - web_api
+
+networks:
+  web_api:
+    driver: bridge
