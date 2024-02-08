@@ -9,7 +9,7 @@ require (
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/lib/pq v1.10.9
 	github.com/stretchr/testify v1.8.4
-	github.com/zhikh23/appolo-protos v0.1.1
+	github.com/zhikh23/appolo-protos v0.1.2
 	go.uber.org/mock v0.4.0
 	google.golang.org/grpc v1.59.0
 )

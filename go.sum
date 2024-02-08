@@ -81,8 +81,8 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
-github.com/zhikh23/appolo-protos v0.1.1 h1:HJaVkPtqxniGYAFr8U4bJYfvs59iExYqmCAVrW4GJ/g=
-github.com/zhikh23/appolo-protos v0.1.1/go.mod h1:x0A901rihvRlix/4YoqmrTXXZv7LuJULgyMYYL4PmVI=
+github.com/zhikh23/appolo-protos v0.1.2 h1:fCY6p1Je3oPgA55O61sbPskCfHuFOIEsimmWI+RCzUU=
+github.com/zhikh23/appolo-protos v0.1.2/go.mod h1:x0A901rihvRlix/4YoqmrTXXZv7LuJULgyMYYL4PmVI=
 go.uber.org/atomic v1.7.0 h1:ADUqmZGgLDDfbSL9ZmPxKTybcoEYHgpYfELNoN+7hsw=
 go.uber.org/atomic v1.7.0/go.mod h1:fEN4uk6kAWBTFdckzkM89CLk9XfWZrxpCo0nPH17wJc=
 go.uber.org/mock v0.4.0 h1:VcM4ZOtdbR4f6VXfiOpwpVJDL6lCReaZ6mw31wqh7KU=

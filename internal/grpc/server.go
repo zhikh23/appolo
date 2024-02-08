@@ -28,12 +28,12 @@ type MaterialService interface {
 }
 
 type serverApi struct {
-	appolov1.UnimplementedRegisterServer
+	appolov1.UnimplementedRegisterServiceServer
 	service MaterialService
 }
 
 func Register(grpcServer *grpc.Server, service MaterialService) {
-	appolov1.RegisterRegisterServer(grpcServer, &serverApi{ service: service })
+	appolov1.RegisterRegisterServiceServer(grpcServer, &serverApi{ service: service })
 }
 
 func (s *serverApi) RegisterMaterial(ctx context.Context, req *appolov1.RegisterRequest) (*appolov1.RegisterResponse, error) {
