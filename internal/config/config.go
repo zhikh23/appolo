@@ -3,6 +3,7 @@ package config
 type Config struct {
 	Env  		string		`yaml:"env" env-default:"local"`
 	Postgres 	Postgres	`yaml:"postgres"`
+	Server      Server		`yaml:"server"`
 }
 
 type Server struct {

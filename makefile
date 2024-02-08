@@ -51,10 +51,19 @@ migrate-down:	## Migrate down $(V) local postgres DB
 migrate-force:	## Force migration version to $(V)
 	@migrate -source file://./migrations -database "postgres://localhost:5432/appolodb?user=appolo&password=$(POSTGRES_PASSWORD)&sslmode=disable" force $(V)
 
+# === CODE GENERATION =========================================================
+.PHONY: gen-grpc
+gen-grpc: ## Generate gRPC stubs
+	@protoc -I proto proto/$.proto \
+		--go_out=./gen/go/${name}/ \
+		--go_opt=paths=source_relative \
+		--go-grpc_out=./gen/go/${name}/ \
+		--go-grpc_opt=paths=source_relative; \
+
 # === GENERAL =================================================================
 .PHONY: run
 run: ## Start the service with the CONFIG_PATH configuration
-	@go run cmd/appolo/appolo.go
+	@go run cmd/register/register.go
 
 .PHONY: help
 help: ## Show help for each of the Makefile targets.
